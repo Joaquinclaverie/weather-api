@@ -56,3 +56,7 @@ profile-*
 profile*
 *clinic*
 *flamegraph*
+
+# public folder
+public
+
