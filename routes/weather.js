@@ -8,7 +8,7 @@ weatherRouter.get('/citys', async (req, res) => {
     const body = ['Salta', 'Mendoza', 'Ushuaia', 'Rosario', 'Jujuy']
     res.json({ ciudadesFavoritas: body });
   } catch (err) {
-    res.status(500).json({ errorMessage: 'Error recuperando ciudades, intente nuevamente'})
+    res.status(500).json({ error: err, message: 'Error recuperando ciudades, intente nuevamente'})
   }
 });
 
@@ -18,7 +18,7 @@ weatherRouter.get('/location', async (req, res) => {
     const body = await response.data
     res.json({ dataUbicacion: body });
   } catch (err) {
-    res.status(500).json({ errorMessage: 'Error recuperando ubicacion, intente nuevamente'})
+    res.status(500).json({ error: err, message: 'Error recuperando ubicacion, intente nuevamente'})
   }
 });
 
@@ -42,7 +42,7 @@ weatherRouter.get('/current/:city?', async (req, res) => {
       })
     }
   } catch (err) {
-    res.status(500).json({error: 'Error en el servidor, intente nuevamente'})
+    res.status(500).json({error: err, message: 'Error en el servidor, intente nuevamente'})
   }
 })
 
@@ -80,7 +80,7 @@ weatherRouter.get('/forecast/:city?', async (req, res) => {
       })
     }
   } catch (err) {
-    res.status(500).json({error: 'Error en el servidor, intente nuevamente'})
+    res.status(500).json({error: err, message: 'Error en el servidor, intente nuevamente'})
   }
 })
 
