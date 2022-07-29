@@ -1,5 +1,6 @@
 const request = require('supertest')
-const baseURL = "http://localhost:3000"
+require('dotenv').config();
+const baseURL = process.env.BASE_URL
 
 describe('Get Citys', () => {
     it('Recuperando Ciudades favoritas', async () => {

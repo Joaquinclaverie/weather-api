@@ -5,7 +5,7 @@ const swaggerJsDoc = require('swagger-jsdoc')
 var indexRouter = require('./routes/index');
 var weatherRouter = require('./routes/weather');
 var swaggerOptions = require('./swaggerOptions')
-
+require('dotenv').config();
 var app = express();
 
 app.use(logger('dev'));
@@ -19,7 +19,7 @@ app.use(
   swaggerUi.setup(swaggerJsDoc(swaggerOptions))
 )
 
-const PORT = process.env.APP_PORT || 3000;
+const PORT = process.env.APP_PORT;
 const server = app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
