@@ -16,3 +16,7 @@ API que provee en formato JSON el estado del tiempo basado en diferentes endpoin
 `GET` City es un parámetro opcional. Devuelve los datos de ubicación city o la ubicación actual según ip-api y el estado del tiempo actual: `/v1/current/:city` 
 
 `GET` City es un parámetro opcional. Devuelve los datos de ubicación city o la ubicación actual según ip-api y el estado del tiempo a 5 días: `/v1/forecast/:id` 
+
+### Comentarios
+
+* Dejo las variables de entorno sin ocultar en el .gitignore para que se pueda correr la app de manera facil y sin tener que escribirlas aca y que tengan que crear un archivo y copypastearlas. Hago eso ya que no hay ninguna key que sea lo suficientemente peligrosa para que otra persona la use.
